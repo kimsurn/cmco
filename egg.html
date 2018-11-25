@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Did you choose 'EGG'?</title>
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+
+<style>
+
+body { width: 99%; height: 99%; background: black; transition:all 1.2s;}
+
+*h3{font-family: "source-han-serif-korean",serif;}
+h1,h2,p1,p2{font-family: 'Permanent Marker', cursive;}
+	h1{font-size: 3em; font-weight: 500; text-align: left; color: grey;}
+	h2{font-size: 3em; font-weight: 500; text-align: left; color: red;}
+	h3{font-size: 1.2em; line-height:1.8; font-weight: 300; text-align: left; color: white;}
+	h4{font-size: 1.2em; line-height:1.8; font-weight: 300; text-align: left; color: white;}
+	h5{font-size: 1.2em; line-height:1.8; font-weight: 300; text-align: left; color: white;}
+    p1{font-size: 4em; line-height:1.4; font-weight: 400; text-align: center; color: grey;}
+    p2{font-size: 4em; line-height:1.4; font-weight: 400; text-align: center; color: grey;}
+
+
+    #which{width: 40%; height: 50%; position: absolute; top: 20px; left: 30%; right: 30%; display: none; overflow: hidden; text-shadow: 4px 4px 5px grey;}
+    #which:hover { text-shadow: 3px 3px 2px red; text-decoration: underline;}
+    #chicken{width: 30%; height: 15%; position: absolute; top: 450px; left: 10%; display: none; overflow: hidden; text-shadow: 5px 5px 2px #dd0055; text-decoration:underline; }
+    #chicken:hover { background-color: white; color: black; text-shadow: 3px 3px 2px red; }
+    #egg{width: 30%; height: 15%; position: absolute; top: 450px; right: 10%; display: none; overflow: hidden; text-shadow: 5px 5px 2px #dd0055; text-decoration:underline;}
+    #egg:hover { background-color: white; color: black; text-shadow: 3px 3px 2px red; }
+
+    
+    p.typing-txt{display: none; position: absolute; overflow: hidden;}
+    .typing { overflow: hidden; position: absolute; display: block; 
+      animation: cursor 7s ease-in-out forwards;} 
+    @keyframes cursor{ 
+      0%{border-right: 1px solid #fff} 
+      50%{border-right: 1px solid #000} 
+      100%{border-right: 1px solid #fff} 
+    }
+    .typing-txt:hover {background:black; color: white; text-shadow: 2px 2px 10px red;}
+    #name2 {width: 40px; height: 100px; animation: slide_ 1.2s forwards; overflow: hidden;}
+
+    #moveup1 { width:50px; height: 50px; position: fixed; 
+		top:3%; left:47%; transform:rotateZ(90deg); transition: all 1s; z-index: 899; }
+
+    #movedown1 { width: 50px; height: 50px; position: absolute; 
+		bottom:3%; left: 47%; transform: rotateZ(-90deg); transition: all 1s; display: none; }
+
+	#moveright1 {width: 50px; height: 50px; position: absolute; top: 47%; right: 3%; transform: rotateY(180deg); opacity: 0; transition: all 1s; display: inline;}
+
+	#main { width: 530px; height: 480px; 
+		position: absolute; top: 140px; left: 500px; opacity: 0; transition: all 2s; display: none; }
+
+	#mydiv {width: 25%; height: 100%; position: fixed; 
+		overflow: hidden; display: block; margin-left: 3%; float: left; }
+	h2:hover { text-shadow: 3px 3px 2px black; background-color: white; width: 95%; }
+	h3:hover { box-shadow: 7px 7px 2px red; background-color: white; width: 95%; color: black; font-weight: 900; width: 100%;}
+	h4:hover { box-shadow: 7px 7px 2px red; background-color: white; width: 95%; color: black; font-weight: 900; width: 100%;}
+	h5:hover { box-shadow: 7px 7px 2px red; background-color: white; width: 95%; color: black; font-weight: 900; width: 100%;}
+	#mydivup {width: 100%; height: 5%; overflow: hidden; margin-top: 2%; display: block;}
+	#mydivin {width: 95%; height: 12%;overflow: hidden; margin-top: 7%; transition: all 0.5s; display: block; box-shadow: 6px 6px 1px red; }
+	#mydivin:hover { box-shadow: 6px 6px 1px white; }
+
+	#chickentext1{width: 60%; height: 30%; position: absolute; top: 10%; right: 5%; animation: opacity 2s;}
+	@keyframes opacity{
+		from{opacity: 0; top: 30%;}
+		to{opacity: 1; top: 10%;}
+	}
+    
+
+</style>
+</head>
+
+<body>
+
+	<a href="index.html"><img src="./move1.png" id="moveup1"
+	onMouseOver="this.src='./moveon1.png'"
+    onMouseOut="this.src='./move1.png'"></a>
+
+    <img src="./move1.png" id="movedown1"
+	onMouseOver="this.src='./moveon1.png'"
+    onMouseOut="this.src='./move1.png'">
+
+    <img src="./move1.png" id="moveright1"
+	onMouseOver="this.src='./moveon1.png'"
+    onMouseOut="this.src='./move1.png'">
+
+    <div id="mydiv">
+    	<div id="mydivin" style="height: 30%; top: 5%; box-shadow: 0px 0px 0px black;"><h1>Did You Choose </h1><h2  style="margin-top: -11%;">The EGG ?</h2></div>
+	    <div style="margin-top: -12%;">
+	    <div><img src="egg1.png" id="mydivin"
+	    	onMouseOver="this.src='egg1.gif'"
+    		onMouseOut="this.src='egg1.png'"></div>
+
+    	<div><img src="chicken7.png" id="mydivin"
+	    	onMouseOver="this.src='chicken7.gif'"
+    		onMouseOut="this.src='chicken7.png'"></div>
+
+	    	<img src="chicken6.png" id="mydivin" 
+	    	onMouseOver="this.src='chicken6.gif'"
+    		onMouseOut="this.src='chicken6.png'"></div>
+
+    	<div><img src="chicken8.png" id="mydivin"
+	    	onMouseOver="this.src='chicken8.gif'"
+    		onMouseOut="this.src='chicken8.png'"></div>
+
+	    <div><img src="chicken9.png" id="mydivin"
+	    	onMouseOver="this.src='chicken9.jpg'"
+    		onMouseOut="this.src='chicken9.png'"></div>
+    </div>
+
+    <div id="chickentext1">
+    	<h2>Sorry, but I Don't Think So :(</h2>
+    	<br><b><h3>1.</b> <br><br>닭이 먼저여야 하느냐 아니면 알이 먼저여야 하느냐? 닭이 먼저인것은 아주 정상이지만, 닭이 없는데  알이 있다면 그것은 비정상이다. <b>닭이 먼저인 것은 틀림없다.</b> 이것은 매우 간단한 일이므로, 더 높은 인식을 말해야 할 필요도 없다. 닭이 있으면 자연히 알도 있게 되는 법인데, 이 것은 이미 다 그러게 되어 있는 일이 아니냐! 알을 먼저 만들었다면 또 닭이 그것을 품어야 하지 않겠느냐? 직접 닭을 만든다면 다 갖춰져 있는 것이 아닌가? 하나님은 직접 닭을 만들었는데, 닭이 알을 낳을 수 있고, 또 그것을 품어 병아리로 부화시킬 수 있으며, 사람 또한 닭고기를 먹을 수 있다. 이 얼마나 편리한 것이냐! 달걀도 조상이 있는 데, 그것은 닭이다. 패괴된 인류는 정말로 황당하고 터무니없어 흔히 이런 간단한 일에 대해서도 분명하게 알지 못한다.  마지막에는 황당하고 그릇된 논리를 한 무더기 정리해내는데, 정말로 유치하다. 이제 달걀과 닭의 관계를 분명하게 알았다. 닭이 먼저인데, 이 것이 가장 정확한 해석이고 가장 정확한 터득과 해답이다.<br><b>이렇게 인식하는 것이 옳은 것이다.</b></h3>
+    	<br><br><br><b><h4>2.</b> <br><br>창세기 1장 20-21절 :<br>"물에는 생물이 번성하고 공중에는 새가 날으라"하고 말씀하셨다. <br>이와 같이 <b>하나님은</b> 거대한 바다 생물과 물에서 번성하는 갖가지 물고기와 <b>날개 달린 온갖 새들을 창조하셨다.</b> 이 것은 하나님이 보시기에 좋았다.</h4>
+    	<br><br><br><h5>3.</b> <br><br>달걀이 먼저라는 의미는 달걀이 유전자 정보에 의해서 생명체가 생겨나고 프로그래밍된 정보에 의해 생명을 유지하다가 종족을 퍼트리고 유전자가 존재하다록 한 후 생명체를 임무완수를 다하는 것을 의미한다. 자살은 이러한 관점에서 본다면 환경에 적응하지 못하는 개체는 유전자가 자신의 종족을 보존하는데, 실패한 유전자로서 판명되어서 차라리 유전자를 퍼뜨리지 않는데 좋다고 판단한거라고 해석할 수도 있겠다. 닭이 먼저라는 의미는 닭이라는 생명체가 먼저 있었고, 그 생명체가 유전자 정보를 변형시켜서 다음 세대에 전달한다. 단지 유전자 정보레 의해 프로그래밍된 로보트가 아니라 유전자를 프로그래밍하고 영향을 끼치는 존재라고 보는 것이다. 유전자는 주변의 환경과 상호작용하면서 변화하고 적응 한다. 다만 그 유전자가 변화하는데 오랜 시간이 걸릴 뿐이다. 우리가 일상생활을 하는 것도 사실은 유전자의 정보에 따라 행동하는 것이 아닐까?
+    	</h5><br><br><br>
+    	<h3>4.<br><br> 한자로 鷄(계, 닭)와 卵(란, 알)으로 나눈다면 계(닭)가 먼저다. 영어 사전에는 chicken은 egg보다 먼저인데, rooster나 hen은 egg보다 뒤다. 하지만 영어에서도 어감상 어류나 파충류의 알까지 따지지는 않는다.</h3>
+    	<br><br><br><h3>5.<br><br>이모지 중에서는 <b>닭</b>(🐔 U+1F414[4])이 <b>달걀</b>(🥚 U+1F95A[5])보다 먼저 나온다.</h3>
+    	<br><br><br><h3>6.<br><br>여담으로 여러 포털 사이트에서 검색 결과를 보면 대부분의 사람들이 '닭이 먼저냐, 달걀(혹은 알)이 먼저냐'라는 문장을 사용하고, '달걀이 먼저냐, 닭이 먼저냐'라는 문장은 찾아 보기가 희박하다. <b>사람들에게 보편화된 사고에 의해서 사회적인 순서는 닭이 먼저</b>라고 정의할 수 있다.</h3>
+    	<br><br><br><h3>7.<br><br>영국의 다른 연구팀에 의하면 닭의 난소안에 들어있는 오보클레디딘-17 단백질이 탄산칼슘 입자에 달라붙어 결정체 형성에 촉매 역할을 하다가 결정핵이 스스로 자랄 수 있을 만큼 커졌을 때 떨어져 나가는 역할을 하는데 이 때문에 달걀 형성에 필수적인 역할을 하는 <b>단백질의 모체인 닭이 달걀에 우선</b>한다고 본 것이라고 한다.</h3>
+    	<br><br><br><h3>8.<br><br> '닭이 먼저냐 병아리가 먼저냐', '사람이 먼저냐 난자가 먼저냐' 같은 질문을 이상하게 여기듯이 달걀은 닭과 별개의 물체가 아니라 <b>닭의 성장과정 중 일부이기 때문에 무엇이 먼저인가를 판단하는 것 자체가 말이 안 된다</b>는 의견도 있다. </h3>
+		<br><br><br><h3>9.<br><br> 스리랑카에서 달걀 없이 태어난 병아리가 발견되었다. 물론 정확히는 어미 닭의 체내에서 부화해 버린 것이지만. 병아리째로 자식을 낳은 어미는 결국 내상 때문에 숨졌다고 한다.</h3>
+		    </div>
+
+	<script type="text/javascript">
+	var toggle = "off"
+
+		movedown1.onclick = function(){
+			if(toggle == "off"){
+
+				toggle = "on"
+
+				movedown1.style.display = "none";
+
+				moveup1.style.display = "inline";
+			}
+		}
+	
+	</script>
+
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Which Came First ?</title>
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="normalize.css">
+<script src="https://use.typekit.net/dcf1ame.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<style>
+
+/*cursor:url('./move.ani'), url('./move.png'), auto;
+font-family: 'Permanent Marker', cursive;*/
+
+body { width: 99%; height: 99%; background: white; transition:all 1.2s;}
+
+*h3{font-family: "source-han-serif-korean",serif;}
+h1,h2,p1,p2{font-family: 'Permanent Marker', cursive;}
+	h1{font-size: 6em; line-height:1.4; font-weight: 600; text-align: center; color: white;}
+    p1{font-size: 4em; line-height:1.4; font-weight: 400; text-align: center; color: grey;}
+    p2{font-size: 4em; line-height:1.4; font-weight: 400; text-align: center; color: grey;}
+
+
+    #which{width: 40%; height: 50%; position: absolute; top: 20px; left: 30%; right: 30%; display: none; overflow: hidden; text-shadow: 4px 4px 5px grey;}
+    #which:hover { text-shadow: 3px 3px 2px red; text-decoration: underline;}
+    #chicken{width: 30%; height: 15%; position: absolute; top: 450px; left: 10%; display: none; overflow: hidden; text-shadow: 5px 5px 2px #dd0055; text-decoration:underline; }
+    #chicken:hover { background-color: white; color: black; text-shadow: 3px 3px 2px red; }
+    #egg{width: 30%; height: 15%; position: absolute; top: 450px; right: 10%; display: none; overflow: hidden; text-shadow: 5px 5px 2px #dd0055; text-decoration:underline;}
+    #egg:hover { background-color: white; color: black; text-shadow: 3px 3px 2px red; }
+
+    
+    p.typing-txt{display: none; position: absolute; overflow: hidden;}
+    .typing { overflow: hidden; position: absolute; display: block; 
+      animation: cursor 7s ease-in-out forwards;} 
+    @keyframes cursor{ 
+      0%{border-right: 1px solid #fff} 
+      50%{border-right: 1px solid #000} 
+      100%{border-right: 1px solid #fff} 
+    }
+    #name2 {width: 40px; height: 100px; animation: slide_ 1.2s forwards; overflow: hidden;}
+
+    #motion { width: 99%; height: 700px; overflow: hidden; display: inline;}
+
+    #moveup1 { width:50px; height: 50px; position: absolute; 
+		top:3%; left:47%; transform:rotateZ(90deg); transition: all 1s; display: none; z-index: 899;}
+
+    #movedown1 { width: 50px; height: 50px; position: absolute; 
+		bottom:2%; left: 47%; transform: rotateZ(-90deg); transition: all 1s; display: inline; }
+
+	#movedown2 { width: 50px; height: 50px; position: absolute; 
+		bottom:2%; left: 47%; transform: rotateZ(-90deg); transition: all 1s; display: none;}
+
+	#moveright1 {width: 50px; height: 50px; position: absolute; top: 47%; right: 3%; transform: rotateY(180deg); opacity: 0; transition: all 1s; display: none;}
+
+	#main { width: 530px; height: 480px; 
+		position: absolute; top: 140px; left: 500px; opacity: 0; transition: all 2s; display: none; }
+
+</style>
+</head>
+
+<body>
+
+	
+
+
+	<a href="index.html"><img src="./move1.png" id="moveup1"
+	onMouseOver="this.src='./moveon1.png'"
+    onMouseOut="this.src='./move1.png'"></a>
+	 
+	<img src="./move.png" id="movedown1"
+	onMouseOver="this.src='./moveon.png'"
+	onMouseOut="this.src='./move.png'">
+
+	<img src="./move1.png" id="movedown2"
+	onMouseOver="this.src='./moveon1.png'"
+	onMouseOut="this.src='./move1.png'"> </a>
+
+	<img src="./move1.png" id="moveright1" 
+	onMouseOver="this.src='./moveon1.png'"
+    onMouseOut="this.src='./move1.png'">
+
+
+    <div id="which"><h1>Which Came First ?</h1></div>
+    <div><a href="chicken.html" target="_new"><p1 id="chicken">The Chicken ?</p1></a></div>
+    <div><a href="egg.html"><p2 id="egg">The Egg ?</p2></a></div>
+
+	<div><img src="./eggborn.gif" id="main" style="transition: all 5s;"></div>
+
+
+	<div id="name2"></div>
+
+	<div id="motion" style="transition: all 0.2s; opacity: 1;">
+    <p class="typing-txt" style="color: black; overflow: hidden;">닭이 먼저냐 달걀이 먼저냐? <br> 닭과 달걀에 얽힌 이름높은 말장난. <br>사실 이 문제에 답하기 위해 일차적으로 해야 할 일은 달걀을 "닭이 낳은 알"로 정의하느냐, "닭이 되는 알"로 정의하느냐이다. 달걀은 닭을 만들고, 닭은 달걀을 만든다. 끝없이 서로 물고 물리는 관계에서 시간적 선후를 결정하는 것은 불가능하다. 달걀이 '닭이 낳은 알' 이라면 닭이 달걀보다 우선하지만, '닭이 되는 알'이라면 달걀이 우선한다. 자 그래서 당신은 어떻게 생각하는가?</p> 
+	  <p class="typing" style="width: 100%; height: 680px; 
+	  	position: absolute; left: 0px; top: -70px; font-size: 4.05em;  
+	  	line-height:1.3; font-weight: 900; overflow: hidden;
+	  	font-family: source-han-serif-korean, serif;"></p>
+	  </div>
+
+	  <script> 
+	  	//타이핑
+	    var typingBool = false; 
+	    var typingIdx = 0; 
+	    var typingTxt = $(".typing-txt").text(); 
+	    typingTxt=typingTxt.split("");  
+	    if(typingBool==false){  
+	       typingBool = true; 
+	       
+	       var tyInt = setInterval(typing,30); 
+	     } 
+	     function typing(){ 
+	       if(typingIdx<typingTxt.length){ 
+	         $(".typing").append(typingTxt[typingIdx]); 
+	         typingIdx++; 
+	       } else{ 
+	         clearInterval(tyInt); 
+	       } 
+	     }    
+
+	    //빨간 페인트 나타내기
+		var toggle = "off"
+
+		motion.onclick = function(){
+			if(toggle == "off"){
+
+				toggle = "on"
+
+                paint.style.opacity = 1;
+				paint2.style.opacity = 1;
+				paint3.style.opacity = 1;
+				paint4.style.opacity = 1;
+
+				paint.style.width = "200px";
+				paint2.style.width = "200px";
+				paint3.style.width = "200px";
+				paint4.style.width = "200px";
+
+			} else if (toggle = "on") {
+                toggle ="off";
+
+                paint.style.opacity = 0;
+				paint2.style.opacity = 0;
+				paint3.style.opacity = 0;
+				paint4.style.opacity = 0;
+
+				paint.style.width = "0px";
+				paint2.style.width = "0px";
+				paint3.style.width = "0px";
+				paint4.style.width = "0px";
+
+				typing.style.color = "black";
+            } 
+		}
+
+		//페이지 이동, 밑으로
+		var toggle = "off"
+
+		movedown1.onclick = function(){
+			if(toggle == "off"){
+				movedown1.setAttribute("src","./move.png");
+				toggle = "on"
+
+				document.body.style.background = "black";
+				/*rgb(222,205,165)*/
+				motion.style.display = "none";
+				motion.style.opacity = 0;
+
+				movedown1.style.opacity = 0;
+				movedown1.style.display = "none";
+
+				movedown2.style.display = "inline";
+
+				moveup1.style.display = "inline";
+
+				moveright1.style.display = "inline";
+
+				which.style.display = "inline";	
+				chicken.style.display = "inline";
+				egg.style.display = "inline";
+				}
+			}
+	  </script> 
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Did you choose 'CHICKEN'?</title>
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+
+<style>
+
+body { width: 99%; height: 99%; background: black; transition:all 1.2s;}
+
+*h3{font-family: "source-han-serif-korean",serif;}
+h1,h2,p1,p2{font-family: 'Permanent Marker', cursive;}
+	h1{font-size: 3em; font-weight: 500; text-align: left; color: grey;}
+	h2{font-size: 3em; font-weight: 500; text-align: left; color: red;}
+	h3{font-size: 1.2em; line-height:1.8; font-weight: 300; text-align: left; color: white;}
+	h4{font-size: 1.2em; line-height:1.8; font-weight: 300; text-align: left; color: white;}
+	h5{font-size: 1.2em; line-height:1.8; font-weight: 300; text-align: left; color: white;}
+    p1{font-size: 4em; line-height:1.4; font-weight: 400; text-align: center; color: grey;}
+    p2{font-size: 4em; line-height:1.4; font-weight: 400; text-align: center; color: grey;}
+
+
+    #which{width: 40%; height: 50%; position: absolute; top: 20px; left: 30%; right: 30%; display: none; overflow: hidden; text-shadow: 4px 4px 5px grey;}
+    #which:hover { text-shadow: 3px 3px 2px red; text-decoration: underline;}
+    #chicken{width: 30%; height: 15%; position: absolute; top: 450px; left: 10%; display: none; overflow: hidden; text-shadow: 5px 5px 2px #dd0055; text-decoration:underline; }
+    #chicken:hover { background-color: white; color: black; text-shadow: 3px 3px 2px red; }
+    #egg{width: 30%; height: 15%; position: absolute; top: 450px; right: 10%; display: none; overflow: hidden; text-shadow: 5px 5px 2px #dd0055; text-decoration:underline;}
+    #egg:hover { background-color: white; color: black; text-shadow: 3px 3px 2px red; }
+
+    
+    p.typing-txt{display: none; position: absolute; overflow: hidden;}
+    .typing { overflow: hidden; position: absolute; display: block; 
+      animation: cursor 7s ease-in-out forwards;} 
+    @keyframes cursor{ 
+      0%{border-right: 1px solid #fff} 
+      50%{border-right: 1px solid #000} 
+      100%{border-right: 1px solid #fff} 
+    }
+    .typing-txt:hover {background:black; color: white; text-shadow: 2px 2px 10px red;}
+    #name2 {width: 40px; height: 100px; animation: slide_ 1.2s forwards; overflow: hidden;}
+
+    #moveup1 { width:50px; height: 50px; position: fixed; 
+		top:3%; left:47%; transform:rotateZ(90deg); transition: all 1s; z-index: 899; }
+
+    #movedown1 { width: 50px; height: 50px; position: absolute; 
+		bottom:3%; left: 47%; transform: rotateZ(-90deg); transition: all 1s; display: none; }
+
+	#moveright1 {width: 50px; height: 50px; position: absolute; top: 47%; right: 3%; transform: rotateY(180deg); opacity: 0; transition: all 1s; display: inline;}
+
+	#main { width: 530px; height: 480px; 
+		position: absolute; top: 140px; left: 500px; opacity: 0; transition: all 2s; display: none; }
+
+	#mydiv {width: 25%; height: 100%; position: fixed; 
+		overflow: hidden; display: block; margin-left: 3%; float: left; }
+	h2:hover { text-shadow: 3px 3px 2px black; background-color: white; width: 95%; }
+	h3:hover { box-shadow: 7px 7px 2px red; background-color: white; width: 95%; color: black; font-weight: 900; width: 100%;}
+	h4:hover { box-shadow: 7px 7px 2px red; background-color: white; width: 95%; color: black; font-weight: 900; width: 100%;}
+	h5:hover { box-shadow: 7px 7px 2px red; background-color: white; width: 95%; color: black; font-weight: 900; width: 100%;}
+	#mydivup {width: 100%; height: 5%; overflow: hidden; margin-top: 2%; display: block;}
+	#mydivin {width: 95%; height: 12%;overflow: hidden; margin-top: 7%; transition: all 0.5s; display: block; box-shadow: 6px 6px 1px red; }
+	#mydivin:hover { box-shadow: 6px 6px 1px white; }
+
+	#chickentext1{width: 60%; height: 30%; position: absolute; top: 10%; right: 5%; animation: opacity 2s;}
+	@keyframes opacity{
+		from{opacity: 0; top: 30%;}
+		to{opacity: 1; top: 10%;}
+	}
+    
+
+</style>
+</head>
+
+<body>
+
+	<a href="index.html"><img src="./move1.png" id="moveup1"
+	onMouseOver="this.src='./moveon1.png'"
+    onMouseOut="this.src='./move1.png'"></a>
+
+    <img src="./move1.png" id="movedown1"
+	onMouseOver="this.src='./moveon1.png'"
+    onMouseOut="this.src='./move1.png'">
+
+    <img src="./move1.png" id="moveright1"
+	onMouseOver="this.src='./moveon1.png'"
+    onMouseOut="this.src='./move1.png'">
+
+    <div id="mydiv">
+    	<div id="mydivin" style="height: 30%; top: 5%; box-shadow: 0px 0px 0px black;"><h1>Did You Choose </h1><h2  style="margin-top: -11%;">The Chicken ?</h2></div>
+	    <div style="margin-top: -12%;">
+	    	<img src="chicken1.png" id="mydivin" 
+	    	onMouseOver="this.src='chicken1.gif'"
+    		onMouseOut="this.src='chicken1.png'"></div>
+
+	    <div><img src="chicken2.png" id="mydivin"
+	    	onMouseOver="this.src='chicken2.gif'"
+    		onMouseOut="this.src='chicken2.png'"></div>
+
+    	<div><img src="chicken5.png" id="mydivin"
+	    	onMouseOver="this.src='chicken5.gif'"
+    		onMouseOut="this.src='chicken5.png'"></div>
+
+	    <div><img src="chicken3.png" id="mydivin"
+	    	onMouseOver="this.src='chicken3.gif'"
+    		onMouseOut="this.src='chicken3.png'"></div>
+
+	    <div><img src="chicken4.png" id="mydivin"
+	    	onMouseOver="this.src='chicken4.gif'"
+    		onMouseOut="this.src='chicken4.png'"></div>
+    </div>
+
+    <div id="chickentext1">
+    	<h2>Sorry, but I Don't Think So :(</h2>
+    	<br><b><h3> 1.</b> <br><br>통계적으로 시간적 인과관계를 추정해보면 달걀이 먼저인 것으로 나온다. 달걀 수는 닭의 수를 예측하는데 도움을 주지만 닭의 수는 달걀의 수를 예측하는데 도움을 주지 않는다는 것. <br><b>-Granger-Causality for the masses</b></h3>
+    	<br><br><br><b><h4>2.</b> <br><br>여담으로 여러 포털 사이트에서 검색 결과를 보면 대부분의 사람들이 '닭이 먼저냐, 달걀(혹은 알)이 먼저냐'라는 문장을 사용하고, '달걀이 먼저냐, 닭이 먼저냐'라는 문장은 찾아 보기가 희박하다. 사람들에게 보편화된 사고에 의해서 사회적인 순서는 닭이 먼저라고 정의할 수 있다. 그러나 한국어 문장에서 짧은 단어가 먼저 오는 것이 자연스럽기 때문이지, 닭을 먼저라고 생각해서 그런 것인지는 불분명하다. 예컨대 2음절 단어가 먼저 온 '철수와 바둑이'는 자연스럽게 읽히지만, 3음절 단어가 먼저 온 '바둑이와 철수'는 어색한 감이 있다.
+    	</h4><br><br><br><h5>3.</b> <br><br>다음 웹툰 '오늘은 자체 휴강'에서 한 번 다룬적이 있다. 이도저도 안되면 튀는게 답이라는 교훈도 준다. 작가님 닉네임이 계란계란이라서 <b>이때는 계란이 먼저라는 결론이 났다.</b>
+    	</h5>
+    	<br><br><br><h3>4.<br><br>한편 국어사전 등재 순서로는 달걀이 먼저이고 닭이 나중이다. 달걀을 계란으로 써도 계란이 먼저다. 영어로 egg는 어류나 파충류의 알도 포함하기 때문에 진화론의 측면에서는 어떻게 해도 달걀이 먼저다. </h3>
+    	<br><br><br><h3>5.<br><br>마다가스카의 펭귄의 등장인물 줄리언 대왕왈, 달걀이 먼저라고 한다. 이유는 아침에 먹으면 맛있어서이다. </h3>
+    	<br><br><br><h3>6. <br><br>닭이 번식을 위해 달걀을 낳는 것이 아니라, 달걀이 번식을 위해 닭을 만드는 것'이라고 말장난을 하는 이도 있다. 국립생태원 이전 원장이 지은 책에 나온 말.</h3>
+    	<br><br><br><h3>7. <br><br>영국의 한 연구팀의 연구 결과 달걀이 먼저라고 한다. 연구 결과에 따르면 "닭의 조상이 낳은 알에서 유전자 변형(진화)이 일어나 최초의 달걀이 됐고 그 알이 부화한 것이 최초의 닭"이라고는 하는데 이 연구결과에 반발하는 사람들도 많다. 닭의 조상과 닭의 경계가 명확히 구분되는 것도 아니다.</h3>
+    </div>
+
+	<script type="text/javascript">
+	var toggle = "off"
+
+		movedown1.onclick = function(){
+			if(toggle == "off"){
+
+				toggle = "on"
+
+				movedown1.style.display = "none";
+
+				moveup1.style.display = "inline";
+			}
+		}
+	
+	</script>
+
+
+</body>
+</html>
